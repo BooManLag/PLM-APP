@@ -35,6 +35,7 @@ class _MapsHomepageState extends State<MapsHomepage> {
       appBar: AppBar(
         title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
         leading: BackButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));} ,),
+        backgroundColor: Color(0xFF006699),
       ),
       body: Center(
         child: SingleChildScrollView(

@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:plm_app_final/map/map.dart';
 import 'package:plm_app_final/aboutplm/about_plm.dart';
+import 'package:plm_app_final/academiccalendar/acadcalendar.dart';
 
 
 class WelcomeStyle extends StatelessWidget {
@@ -132,7 +133,7 @@ class BottomHomePage extends StatelessWidget {
                     minWidth: 55,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => AcadCalendar()));},
                     child: Icon(Icons.calendar_today, color: Colors.white),
                   ),
                 ),
