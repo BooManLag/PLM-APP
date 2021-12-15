@@ -42,6 +42,10 @@ flutter:
     - assets/PLMSeal.png
     - assets/googlemapicon.png
     - assets/vicinitymap.png
+    - assets/arrowhead.png
+    - assets/arrowheadright.png
+    - assets/plmimage.png
+    - assets/visitplmwebsite.png
 
   fonts:
     - family: Lato
