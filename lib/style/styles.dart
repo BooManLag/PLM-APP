@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:plm_app_final/map/map.dart';
 
 class WelcomeStyle extends StatelessWidget {
   const WelcomeStyle({Key? key}) : super(key: key);
@@ -228,7 +229,7 @@ class BottomHomePage extends StatelessWidget {
                     minWidth: 55,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Maps()));},
                     child: Icon(Icons.pin_drop_outlined, color: Colors.white),
                   ),
                 ),
