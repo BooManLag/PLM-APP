@@ -9,6 +9,7 @@ class Mission extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Lato"),
       home: Scaffold(
         appBar: AppBar(

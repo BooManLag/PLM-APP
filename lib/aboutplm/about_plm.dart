@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plm_app_final/main/home.dart';
 import 'package:plm_app_final/contacts/contacts.dart';
 import 'package:plm_app_final/vision/vision.dart';
+import 'package:plm_app_final/map/map.dart';
 
 void main() => runApp(
     //Main
@@ -392,7 +393,12 @@ class AboutPLM extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Maps()));
+                          },
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 25),
@@ -432,13 +438,18 @@ class AboutPLM extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Maps()));
+                          },
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 25),
                             child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text('View In Google\nMaps'),
