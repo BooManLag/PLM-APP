@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/main/home.dart';
+import 'package:plm_app_final/contacts/contacts.dart';
 
 void main() => runApp(
     //Main
@@ -216,7 +217,9 @@ class AboutPLM extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Contacts()));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 25),

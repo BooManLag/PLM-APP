@@ -14,6 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  google_fonts: ^2.0.0
+
 
   cupertino_icons: ^1.0.2
   division: ^0.9.0
@@ -46,7 +48,23 @@ flutter:
     - assets/arrowheadright.png
     - assets/plmimage.png
     - assets/visitplmwebsite.png
-
+    - assets/Telephone.jpg
+    - assets/arrowleft.png
+    - assets/arrowright.png
+    - assets/no1_highlighted.png
+    - assets/no2_highlighted.png
+    - assets/no3_highlighted.png
+    - assets/no4_highlighted.png
+    - assets/no5_highlighted.png
+    - assets/no6_highlighted.png
+    - assets/no7_highlighted.png
+    - assets/no1.png
+    - assets/no2.png
+    - assets/no3.png
+    - assets/no4.png
+    - assets/no5.png
+    - assets/no6.png
+    - assets/no7.png
   fonts:
     - family: Lato
       fonts:
