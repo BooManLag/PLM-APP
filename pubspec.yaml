@@ -66,6 +66,7 @@ flutter:
     - assets/no6.png
     - assets/no7.png
     - assets/admissions.png
+    - assets/images/clock_icon.png
   fonts:
     - family: Lato
       fonts:
