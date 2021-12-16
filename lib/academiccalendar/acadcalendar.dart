@@ -100,7 +100,9 @@ class _AcadCalendarpageState extends State<AcadCalendarpage> {
                 child: Swiper(
                   outer: false,
                   itemBuilder: (BuildContext context,int index){
-                    return new Image.network("https://plm.edu.ph/images/downloads/our/AY2021-2022_academic_calendar__Page_1b.jpg",fit: BoxFit.fill);
+                    return new Image.network(
+                        "https://plm.edu.ph/images/downloads/our/AY2021-2022_academic_calendar__Page_1b.jpg",
+                        fit: BoxFit.fill);
                   },
                   itemCount: 2,
                   layout: SwiperLayout.TINDER,
@@ -109,8 +111,9 @@ class _AcadCalendarpageState extends State<AcadCalendarpage> {
                   control: SwiperControl(),
                   pagination: SwiperPagination(),
                 ),
-                constraints:new BoxConstraints.loose(new Size(MediaQuery.of(context).size.width * 0.90, MediaQuery.of(context).size.width * 0.50))
-            )
+                constraints: new BoxConstraints.loose(new Size(
+                    MediaQuery.of(context).size.width * 0.90,
+                    MediaQuery.of(context).size.width * 0.50))),
           ],
         ),
       )

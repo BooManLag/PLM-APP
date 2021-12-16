@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plm_app_final/style/styles.dart';
 import 'package:plm_app_final/onboard/login.dart';
 import 'package:plm_app_final/main/home.dart';
+import 'package:plm_app_final/onboard/after_welcome.dart';
 
 void main() {
   runApp(Connect());
@@ -42,7 +43,7 @@ class _ConnectState extends State<Connect> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => AfterWelcome()),
                   );
                 },
                 child: Text(
