@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/main/home.dart';
 import 'package:plm_app_final/contacts/contacts.dart';
+import 'package:plm_app_final/vision/vision.dart';
 
 void main() => runApp(
     //Main
@@ -26,8 +27,8 @@ class AboutPLM extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context ) => HomePage()));
-
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
           },
         ),
       ),
@@ -218,7 +219,8 @@ class AboutPLM extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Contacts()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Contacts()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -260,7 +262,10 @@ class AboutPLM extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Mission()));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 25),
@@ -456,7 +461,6 @@ class AboutPLM extends StatelessWidget {
           ),
           Stack(
             children: [
-
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                 height: 200.0,
@@ -468,12 +472,11 @@ class AboutPLM extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                 height: 200,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     color: Colors.white,
                     gradient: LinearGradient(
                         begin: FractionalOffset.topCenter,
@@ -487,23 +490,25 @@ class AboutPLM extends StatelessWidget {
                           1.0
                         ])),
               ),
-
               Container(
                 margin: EdgeInsets.only(left: 60, top: 160),
                 child: Align(
                   alignment: Alignment.bottomLeft,
-                  child: Text('Visit PLM Website', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),),
+                  child: Text(
+                    'Visit PLM Website',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.only(left: 330, top: 150),
                 child: new Image.asset('assets/images/arrowheadright.png'),
-                ),
-
+              ),
             ],
           ),
-
           SizedBox(
             height: 30,
           ),
