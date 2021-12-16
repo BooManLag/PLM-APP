@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:plm_app_final/map/map.dart';
 import 'package:plm_app_final/aboutplm/about_plm.dart';
 import 'package:plm_app_final/academiccalendar/acadcalendar.dart';
-
+import 'package:plm_app_final/onboard/after_welcome.dart';
 
 class WelcomeStyle extends StatelessWidget {
   const WelcomeStyle({Key? key}) : super(key: key);
@@ -107,7 +107,8 @@ class BottomHomePage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context ) => AboutPLM()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AboutPLM()));
                     },
                     child: Icon(Icons.account_balance_outlined,
                         color: Colors.white),
@@ -133,7 +134,12 @@ class BottomHomePage extends StatelessWidget {
                     minWidth: 55,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => AcadCalendar()));},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AcadCalendar()));
+                    },
                     child: Icon(Icons.calendar_today, color: Colors.white),
                   ),
                 ),
@@ -234,7 +240,10 @@ class BottomHomePage extends StatelessWidget {
                     minWidth: 55,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Maps()));},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Maps()));
+                    },
                     child: Icon(Icons.pin_drop_outlined, color: Colors.white),
                   ),
                 ),

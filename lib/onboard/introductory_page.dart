@@ -71,23 +71,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "Welcome",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "Hi, welcome to our new, easy and mobile friendly app of Pamantasan ng Lungsod ng Maynila.",
           image: _buildImage('On1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Be Updated",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+          "Be notified of your online class meetings, PLM updates, admission, enrollment, PLMAT results, and more.",
           image: _buildImage('On2.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Enroll and Apply",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+          "You can now enroll in PLM, apply for career placement for alumni’s and job postings inside PLM",
           image: _buildImage('On3.jpg'),
           decoration: pageDecoration,
         ),
