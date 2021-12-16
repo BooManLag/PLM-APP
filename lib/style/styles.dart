@@ -8,6 +8,8 @@ import 'package:plm_app_final/map/map.dart';
 import 'package:plm_app_final/aboutplm/about_plm.dart';
 import 'package:plm_app_final/academiccalendar/acadcalendar.dart';
 import 'package:plm_app_final/onboard/after_welcome.dart';
+import 'package:plm_app_final/schedule/schedule.dart';
+
 
 class WelcomeStyle extends StatelessWidget {
   const WelcomeStyle({Key? key}) : super(key: key);
@@ -314,7 +316,12 @@ class BottomHomePage extends StatelessWidget {
                       minWidth: 55,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Schedule()));
+                      },
                       child:
                           Icon(Icons.access_time_outlined, color: Colors.white),
                     ),
