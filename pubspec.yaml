@@ -65,6 +65,7 @@ flutter:
     - assets/no5.png
     - assets/no6.png
     - assets/no7.png
+    - assets/admissions.png
   fonts:
     - family: Lato
       fonts:
