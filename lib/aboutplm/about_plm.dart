@@ -15,22 +15,9 @@ class AboutPLM extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'PAMANTASAN NG LUNGSOD NG MAYNILA',
-          style: TextStyle(
-            fontSize: 12,
-            fontFamily: 'ReadexPro',
-          ),
-        ),
-        centerTitle: true,
+        title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
+        leading: BackButton(onPressed: () {Navigator.pop(context);}),
         backgroundColor: Color(0xFF006699),
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
       ),
       body: ListView(
         children: <Widget>[

@@ -22,13 +22,8 @@ class _ProfileState extends State<Profile> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: BackButton(onPressed: () {Navigator.pop(context);}),
           backgroundColor: Color(0xFF006699),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
           title: Text(
             "Profile",
             style: TextStyle(

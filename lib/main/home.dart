@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/onboard/welcome.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:plm_app_final/profile/profile.dart';
 import 'package:plm_app_final/sidenav/sidenav.dart';
 import 'package:plm_app_final/style/styles.dart';
 import 'package:plm_app_final/sidenav/sidenav.dart';
@@ -24,13 +25,8 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         drawer: SideNav(),
         appBar: AppBar(
+          title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
           backgroundColor: Color(0xFF006699),
-          title: const Center(
-            child: Text(
-              'Pamantasan ng Lungsod ng Maynila',
-              style: TextStyle(fontFamily: "Lato", fontWeight: FontWeight.bold),
-            ),
-          ),
         ),
         body: Column(
           children: [
