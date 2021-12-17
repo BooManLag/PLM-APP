@@ -304,7 +304,7 @@ class BottomHomePage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).size.width / 25),
+                  bottom: MediaQuery.of(context).size.width / 45),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -339,7 +339,10 @@ class BottomHomePage extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width / 40),
+                        top: MediaQuery
+                            .of(context)
+                            .size
+                            .width / 20),
                     // ignore: deprecated_member_use
                     child: FlatButton(
                       color: Color(0xFF00AEEF),
@@ -349,14 +352,18 @@ class BottomHomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50)),
                       onPressed: () {
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => admissionsPage1()));
+                            MaterialPageRoute(builder: (context) =>
+                                admissionsPage1()));
                         },
                       child: Icon(Icons.assignment, color: Colors.white),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width / 90),
+                        top: MediaQuery
+                            .of(context)
+                            .size
+                            .width / 60),
                     child: Txt(
                       'ADMISSION',
                       style: TxtStyle()
