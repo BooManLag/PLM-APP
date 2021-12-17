@@ -25,13 +25,8 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         drawer: SideNav(),
         appBar: AppBar(
+          title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
           backgroundColor: Color(0xFF006699),
-          title: const Center(
-            child: Text(
-              'Pamantasan ng Lungsod ng Maynila',
-              style: TextStyle(fontFamily: "Lato", fontWeight: FontWeight.bold),
-            ),
-          ),
         ),
         body: Column(
           children: [
@@ -84,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Profile()),
+                    MaterialPageRoute(builder: (context) => Connect()),
                   );
                 },
                 child: Text(

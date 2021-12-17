@@ -13,45 +13,34 @@ class Mission extends StatelessWidget {
       theme: ThemeData(fontFamily: "Lato"),
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-              //ang dapat na nandito is yung mangyayari if the button is pressed
-            },
-            icon: Icon(Icons.arrow_back),
-          ),
-          title: Text(
-            "PAMANTASAN NG LUNGSOD NG MAYNILA",
-            style: TextStyle(
-                fontFamily: "Lato", fontWeight: FontWeight.bold, fontSize: 12),
-          ),
+          title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
+          leading: BackButton(onPressed: () {Navigator.pop(context);}),
           backgroundColor: Color(0xFF006699),
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: screenHeight * 0.06,
-                width: screenWidth,
-                padding: EdgeInsets.only(top: screenHeight * 0.02),
-                child: Text(
-                  "Hymn, Vision & Mission",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: "Lato",
-                      fontSize: 13.5,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFC909),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                color: Color(0xFFFFC909),
+                child: Center(
+                  child: Text(
+                    'Hymn, Vision & Mission',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               Container(
-                width: screenWidth,
-                child: Image.asset("assets/images/plmimage.png",
-                    fit: BoxFit.contain),
-              ),
+                  height: 145.00,
+                  decoration: new BoxDecoration(
+                    image: new DecorationImage(
+                      image: ExactAssetImage('assets/images/plmimage.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  )),
               Row(
                 children: [
                   Container(
@@ -98,7 +87,7 @@ class Mission extends StatelessWidget {
               ),
               Container(
                 //lyrics intro
-                height: screenHeight * 0.185,
+                height: 150,
                 width: screenWidth,
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.07,
@@ -112,7 +101,7 @@ class Mission extends StatelessWidget {
               Container(
                 //title of song
                 alignment: Alignment.center,
-                height: screenHeight * 0.035,
+                height: 50,
                 width: screenWidth,
                 child: Text(
                   "Pamantasang Mahal",

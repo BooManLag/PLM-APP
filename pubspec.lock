@@ -205,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
+  linkwell:
+    dependency: "direct main"
+    description:
+      name: linkwell
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.6"
   lints:
     dependency: transitive
     description:
@@ -447,7 +454,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   win32:
     dependency: transitive
     description:

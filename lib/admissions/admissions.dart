@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plm_app_final/main/home.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -34,10 +33,7 @@ class admissionsPage1 extends StatelessWidget {
               ),
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back, color: Colors.white),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
-                },
+                onPressed: () {Navigator.pop(context);},
               ),
             ),
             SliverList(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 import 'package:flutter/widgets.dart';
 import 'package:plm_app_final/admissions/admissions.dart';
+import 'package:plm_app_final/grades/grades.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:plm_app_final/map/map.dart';
 import 'package:plm_app_final/aboutplm/about_plm.dart';
@@ -219,7 +220,7 @@ class BottomHomePage extends StatelessWidget {
                     minWidth: 55,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Grades()));},
                     child: Icon(Icons.lightbulb_outlined, color: Colors.white),
                   ),
                 ),

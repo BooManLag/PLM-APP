@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plm_app_final/account_information/accountinformation.dart';
+import 'package:plm_app_final/onboard/welcome.dart';
+import 'package:plm_app_final/settings/settings.dart';
 
 class SideNav extends StatelessWidget {
   @override
@@ -56,7 +59,7 @@ class SideNav extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => AccountInformation()));},
                     icon: Icon(
                       Icons.arrow_forward_ios,
                       color: Color(0xFFC4C4C4),
@@ -87,7 +90,7 @@ class SideNav extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()));},
                     icon: Icon(
                       Icons.arrow_forward_ios,
                       color: Color(0xFFC4C4C4),
@@ -144,7 +147,7 @@ class SideNav extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                       minimumSize: Size(100, 40), //////// HERE
                     ),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Connect()));},
                     label: Text('Sign out'),
                   )
                 ],

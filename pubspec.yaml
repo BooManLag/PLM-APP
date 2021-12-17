@@ -24,6 +24,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   carousel_slider: ^4.0.0
   flutter_login: ^3.1.0
+  linkwell: ^2.0.6
 
 
 dev_dependencies:

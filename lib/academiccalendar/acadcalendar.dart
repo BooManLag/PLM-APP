@@ -1,40 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:plm_app_final/main/home.dart';
 
-void main() {
-  runApp(AcadCalendar());
-}
 
-class AcadCalendar extends StatelessWidget {
-  // This widget is the root of your application.
+class AcadCalendar extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp( debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: AcadCalendarpage(),
-    );
-  }
+  _AcadCalendarState createState() => _AcadCalendarState();
 }
 
-class AcadCalendarpage extends StatefulWidget {
-  @override
-  _AcadCalendarpageState createState() => _AcadCalendarpageState();
-}
-
-class _AcadCalendarpageState extends State<AcadCalendarpage> {
+class _AcadCalendarState extends State<AcadCalendar> {
   static const yellow = const Color(0xFFFFC909);
 
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
-        leading: BackButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));} ,),
+        leading: BackButton(onPressed: () {Navigator.pop(context);}
+        ),
         backgroundColor: Color(0xFF006699),
       ),
       body: SingleChildScrollView(
