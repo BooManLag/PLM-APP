@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (BuildContext context, int index) {
                   return Image.network(
                     carousel[index],
-                    fit: BoxFit.fill,
+                    fit: BoxFit.fitWidth,
                   );
                 },
                 pagination: SwiperPagination(),
