@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:plm_app_final/onboard/welcome.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:plm_app_final/profile/profile.dart';
+import 'package:plm_app_final/sidenav/sidenav.dart';
 import 'package:plm_app_final/style/styles.dart';
+import 'package:plm_app_final/sidenav/sidenav.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        drawer: SideNav(),
         appBar: AppBar(
           backgroundColor: Color(0xFF006699),
           title: const Center(
@@ -60,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (BuildContext context, int index) {
                   return Image.network(
                     carousel[index],
-                    fit: BoxFit.fill,
+                    fit: BoxFit.fitWidth,
                   );
                 },
                 pagination: SwiperPagination(),
