@@ -22,6 +22,7 @@ dependencies:
   url_launcher: ^6.0.17
   introduction_screen: ^2.1.0
   flutter_swiper: ^1.1.6
+  carousel_slider: ^4.0.0
 
 
 dev_dependencies:
@@ -67,6 +68,18 @@ flutter:
     - assets/no7.png
     - assets/admissions.png
     - assets/images/clock_icon.png
+    - assets/account_info.png
+    - assets/calendar.png
+    - assets/change_pass.png
+    - assets/dark_mode.png
+    - assets/language.png
+    - assets/messages.png
+    - assets/notif.png
+    - assets/photos.png
+    - assets/privacy_secu.png
+    - assets/profile_pic.png
+    - assets/transactions.png
+    - assets/plm_pic.png
   fonts:
     - family: Lato
       fonts:
