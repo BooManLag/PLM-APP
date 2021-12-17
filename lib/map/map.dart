@@ -1,40 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:plm_app_final/main/home.dart';
 
-void main() {
-  runApp(Maps());
-}
 
-class Maps extends StatelessWidget {
-  // This widget is the root of your application.
+class Maps extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp( debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MapsHomepage(),
-    );
-  }
+  _MapsState createState() => _MapsState();
 }
 
-class MapsHomepage extends StatefulWidget {
-  @override
-  _MapsHomepageState createState() => _MapsHomepageState();
-}
-
-class _MapsHomepageState extends State<MapsHomepage> {
+class _MapsState extends State<Maps> {
   static const yellow = const Color(0xFFFFC909);
 
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
-        leading: BackButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));} ,),
+        leading: BackButton(onPressed: () {Navigator.pop(context);}),
         backgroundColor: Color(0xFF006699),
       ),
       body: Center(
@@ -116,7 +97,7 @@ class _MapsHomepageState extends State<MapsHomepage> {
                     minimumSize: Size(MediaQuery.of(context).size.width * 0.90, 40)
                 ),
                 onPressed: () {},
-                child: Text('Download'),
+                child: Text('Open in Google Maps'),
 
               ),
 

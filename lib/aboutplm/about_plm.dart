@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plm_app_final/main/home.dart';
+import 'package:plm_app_final/academiccalendar/acadcalendar.dart';
 import 'package:plm_app_final/contacts/contacts.dart';
 import 'package:plm_app_final/vision/vision.dart';
 import 'package:plm_app_final/map/map.dart';
@@ -28,8 +28,7 @@ class AboutPLM extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.pop(context);
           },
         ),
       ),
@@ -179,7 +178,13 @@ class AboutPLM extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) =>
+                          _buildPopupDialog(context),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 25),
@@ -306,7 +311,12 @@ class AboutPLM extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AcadCalendar()));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 25),
@@ -449,7 +459,7 @@ class AboutPLM extends StatelessWidget {
                                 horizontal: 10, vertical: 25),
                             child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text('View In Google\nMaps'),
@@ -527,4 +537,30 @@ class AboutPLM extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _buildPopupDialog(BuildContext context) {
+  return new AlertDialog(
+    title: Center(child: const Text('PLM Contact Information')),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Address: General Luna corner Muralla Streets, Intramuros, Manila, Philippines 1002"
+            "\n\nTrunkline: (+63 2) 8 643 2500\n\nEmail for online payments: payonline@plm.edu.ph"),
+      ],
+    ),
+    actions: <Widget>[
+      Center(
+        child: new FlatButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          color: Color(0xFFE9E9E9),
+          textColor: Colors.black,
+          child: const Text('Close'),
+        ),
+      ),
+    ],
+  );
 }

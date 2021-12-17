@@ -14,26 +14,9 @@ class Schedule extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
+            title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
+            leading: BackButton(onPressed: () {Navigator.pop(context);}),
             backgroundColor: Color(0xFF006699),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
-              },
-            ),
-            title: Padding(
-              padding: const EdgeInsets.only(right: 30),
-              child: Center(
-                child: Text(
-                  "PAMANTASAN NG LUNGSOD NG MAYNILA",
-                  style: TextStyle(
-                      fontFamily: "Lato",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14),
-                ),
-              ),
-            ),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -72,19 +55,9 @@ class Schedule extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  color: Colors.white70,
-                  padding: EdgeInsets.all(MediaQuery
-                      .of(context)
-                      .size
-                      .width / 40),
-                  /** Outer BoxConstraints Widget **/
-                  constraints: BoxConstraints(
-                      minHeight: 50,
-                      minWidth: 50,
-                      maxHeight: 600,
-                      maxWidth: 370),
-                  child: SingleChildScrollView(child: DataTable(
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: DataTable(
                     columnSpacing: 10.0,
                     dataRowHeight: 70.0,
                     headingRowColor: MaterialStateColor.resolveWith(
@@ -464,41 +437,7 @@ class Schedule extends StatelessWidget {
                                   fontSize: 12)),
                         )),
                       ]),
-
-                      ///////////////////// R O W # 11 /////////////////////
-                      DataRow(cells: [
-                        DataCell(Text('Living in the IT Era - ITE 0001	',
-                            style: TextStyle(
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black54,
-                                fontSize: 12))),
-                        DataCell(Center(
-                          child: Text('30',
-                              style: TextStyle(
-                                  fontFamily: "Lato",
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.black54,
-                                  fontSize: 12)),
-                        )),
-                        DataCell(Text(
-                            'W 7:00a-8:30a LecSyncOnline FIELD,Th 7:00a-8:30a LecAsync FIELD	',
-                            style: TextStyle(
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black54,
-                                fontSize: 12))),
-                        DataCell(Center(
-                          child: Text('3',
-                              style: TextStyle(
-                                  fontFamily: "Lato",
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.black54,
-                                  fontSize: 12)),
-                        )),
-                      ]),
                     ],
-                  ),
                   ),
                 ),
                 Center(
