@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/onboard/welcome.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:plm_app_final/profile/profile.dart';
 import 'package:plm_app_final/style/styles.dart';
 
 class HomePage extends StatefulWidget {
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Connect()),
+                    MaterialPageRoute(builder: (context) => Profile()),
                   );
                 },
                 child: Text(
