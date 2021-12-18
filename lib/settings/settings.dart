@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/account_information/accountinformation.dart';
+import 'package:plm_app_final/settings/changepassword.dart';
 
 void main() {
   runApp(const Settings());
@@ -141,7 +142,7 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(left: 154),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePassword()));},
                           icon: Icon(
                             Icons.arrow_forward_ios,
                             color: Color(0xFFC4C4C4),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:linkwell/linkwell.dart';
 
@@ -15,7 +16,6 @@ class _GradesState extends State {
   bool _isVisible3 = false;
   bool _isVisible4 = false;
   bool _isVisible = true;
-
 
   void showGrades1() {
     setState(() {
@@ -43,11 +43,16 @@ class _GradesState extends State {
 
   @override
   Widget build(BuildContext context) {
-    _isVisible = (_isVisible1 == true || _isVisible2 == true || _isVisible3 == true  || _isVisible4 == true  ) ? false : true;
+    _isVisible = (_isVisible1 == true ||
+            _isVisible2 == true ||
+            _isVisible3 == true ||
+            _isVisible4 == true)
+        ? false
+        : true;
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA',
+            title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA',
                 style: TextStyle(fontSize: 14)),
             leading: BackButton(onPressed: () {
               Navigator.pop(context);
@@ -59,7 +64,6 @@ class _GradesState extends State {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 Container(
                   decoration: BoxDecoration(
                     color: Color(0xFFFFC909),
@@ -130,17 +134,17 @@ class _GradesState extends State {
                   onPressed: showGrades4,
                 ),
                 Visibility(visible: _isVisible4, child: GradesContent()),
-                Visibility(
-                  visible: _isVisible,
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
                   child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 100.0),
+                    child: Visibility(
+                      visible: _isVisible,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: yellow,
-                            onPrimary: Colors.black,
-                            minimumSize: Size(
-                                MediaQuery.of(context).size.width * 0.90, 40)),
+                          primary: Color(0xFFFFC909),
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width * 0.90, 40),
+                        ),
                         onPressed: () {},
                         child: Text('Download'),
                       ),
