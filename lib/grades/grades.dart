@@ -50,6 +50,7 @@ class _GradesState extends State {
         ? false
         : true;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA',

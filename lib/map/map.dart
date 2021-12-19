@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-
+import 'package:maps_launcher/maps_launcher.dart';
 
 class Maps extends StatefulWidget {
   @override
@@ -14,8 +14,11 @@ class _MapsState extends State<Maps> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA', style: TextStyle(fontSize: 14)),
-        leading: BackButton(onPressed: () {Navigator.pop(context);}),
+        title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA',
+            style: TextStyle(fontSize: 14)),
+        leading: BackButton(onPressed: () {
+          Navigator.pop(context);
+        }),
         backgroundColor: Color(0xFF006699),
       ),
       body: Center(
@@ -26,8 +29,8 @@ class _MapsState extends State<Maps> {
                 height: 50,
                 color: Color(0xFFFFC909),
                 child: Center(
-                  child:
-                  Text("Academic Calendar",
+                  child: Text(
+                    "Academic Calendar",
                     style: TextStyle(
                         fontFamily: 'Lato',
                         fontWeight: FontWeight.bold,
@@ -47,13 +50,12 @@ class _MapsState extends State<Maps> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(10,30,10,10),
+                padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
                 child: Text(
                   'View the vicinity map, locate our pamantasan\n in Google Maps and be familiarize with the\n different building and offices.',
                   textAlign: TextAlign.center,
                 ),
               ),
-
               Container(
                 width: MediaQuery.of(context).size.width * 0.50,
                 height: MediaQuery.of(context).size.height * 0.40,
@@ -92,15 +94,14 @@ class _MapsState extends State<Maps> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary:yellow,
+                    primary: yellow,
                     onPrimary: Colors.black,
-                    minimumSize: Size(MediaQuery.of(context).size.width * 0.90, 40)
-                ),
-                onPressed: () {},
-                child: Text('Open in Google Maps'),
-
+                    minimumSize:
+                        Size(MediaQuery.of(context).size.width * 0.90, 40)),
+                onPressed: () => MapsLauncher.launchQuery(
+                    'General Luna, corner Muralla St, Intramuros, Manila, 1002 Metro Manila'),
+                child: Text('View on Google Maps'),
               ),
-
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
                 child: Text(
@@ -122,22 +123,36 @@ class _MapsState extends State<Maps> {
                 child: ConstrainedBox(
                     child: Swiper(
                       outer: false,
-                      itemBuilder: (BuildContext context,int index){
-                        return new Image.network("https://scontent.fmnl3-1.fna.fbcdn.net/v/t1.6435-9/34319867_519565291774848_9176474575985180672_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeGo1vu733P8wXxP70wRcMJOrD94b06r3q6sP3hvTqvervFOFxAlf9NuTMqW6pov6OF-HZtEepQFMIpuB48GOH6k&_nc_ohc=cascBvpXZu8AX_QaCor&_nc_ht=scontent.fmnl3-1.fna&oh=00_AT8c_KHZyB7n5AvDB_yKfe0NHqXYilW4_2GdviLO75S-Wg&oe=61DD8520",fit: BoxFit.fill);
+                      itemBuilder: (BuildContext context, int index) {
+                        return new Image.network(
+                            "https://scontent.fmnl3-1.fna.fbcdn.net/v/t1.6435-9/34319867_519565291774848_9176474575985180672_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeGo1vu733P8wXxP70wRcMJOrD94b06r3q6sP3hvTqvervFOFxAlf9NuTMqW6pov6OF-HZtEepQFMIpuB48GOH6k&_nc_ohc=cascBvpXZu8AX_QaCor&_nc_ht=scontent.fmnl3-1.fna&oh=00_AT8c_KHZyB7n5AvDB_yKfe0NHqXYilW4_2GdviLO75S-Wg&oe=61DD8520",
+                            fit: BoxFit.fill);
                       },
                       itemCount: 5,
                       layout: SwiperLayout.TINDER,
-                      itemHeight: MediaQuery.of(context).size.width * 0.50,
-                      itemWidth: MediaQuery.of(context).size.width * 0.80,
+                      itemHeight: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.50,
+                      itemWidth: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.80,
                       control: SwiperControl(),
                       pagination: SwiperPagination(),
                     ),
-                    constraints:new BoxConstraints.loose(new Size(MediaQuery.of(context).size.width * 0.90, MediaQuery.of(context).size.width * 0.50))
-                ),
+                    constraints: new BoxConstraints.loose(new Size(
+                        MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.90,
+                        MediaQuery
+                            .of(context)
+                            .size
+                            .width * 0.50))),
               )
             ],
           ),
         ),
-      )
-  );
+      ));
 }
