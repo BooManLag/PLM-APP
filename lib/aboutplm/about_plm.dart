@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plm_app_final/academiccalendar/acadcalendar.dart';
-import 'package:plm_app_final/contacts/contacts.dart';
+import 'package:plm_app_final/contacts/contactinformation.dart';
 import 'package:plm_app_final/vision/vision.dart';
 import 'package:plm_app_final/map/map.dart';
 
@@ -15,22 +15,26 @@ class AboutPLM extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
-        leading: BackButton(onPressed: () {Navigator.pop(context);}),
+        title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA',
+            style: TextStyle(fontSize: 14)),
+        leading: BackButton(onPressed: () {
+          Navigator.pop(context);
+        }),
         backgroundColor: Color(0xFF006699),
       ),
       body: ListView(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            height: 50,
             color: Color(0xFFFFC909),
             child: Center(
-              child: Text(
-                'About PLM',
+              child:
+              Text("About PLM",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                    fontFamily: 'Lato',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    color: Colors.white),
               ),
             ),
           ),
@@ -213,7 +217,7 @@ class AboutPLM extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Contacts()));
+                        MaterialPageRoute(builder: (context) => ContactInformation()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -528,12 +532,20 @@ class AboutPLM extends StatelessWidget {
 
 Widget _buildPopupDialog(BuildContext context) {
   return new AlertDialog(
-    title: Center(child: const Text('PLM Contact Information')),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(30.0),
+    ),
+    title: Center(
+        child: const Text(
+      'PLM Contact Information',
+      style: TextStyle(fontWeight: FontWeight.bold),
+    )),
     content: new Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Address: General Luna corner Muralla Streets, Intramuros, Manila, Philippines 1002"
+        Text(
+            "Address: General Luna corner Muralla Streets, Intramuros, Manila, Philippines 1002"
             "\n\nTrunkline: (+63 2) 8 643 2500\n\nEmail for online payments: payonline@plm.edu.ph"),
       ],
     ),
@@ -546,6 +558,7 @@ Widget _buildPopupDialog(BuildContext context) {
           color: Color(0xFFE9E9E9),
           textColor: Colors.black,
           child: const Text('Close'),
+          minWidth: 150,
         ),
       ),
     ],

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plm_app_final/onboard/loginpage.dart';
 import 'package:plm_app_final/style/styles.dart';
 import 'package:plm_app_final/onboard/login.dart';
 import 'package:plm_app_final/main/home.dart';
@@ -15,6 +16,7 @@ class Connect extends StatefulWidget {
 }
 
 class _ConnectState extends State<Connect> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,13 +28,20 @@ class _ConnectState extends State<Connect> {
             Center(
               child: Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.width * 0.1),
+                    top: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.1),
                 child: Image.asset("assets/images/PLMSeal.png"),
               ),
             ),
             WelcomeStyle(),
             Padding(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.1),
+              padding:
+              EdgeInsets.only(top: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.1),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: Color(0xFFE9E9E9),
@@ -53,7 +62,11 @@ class _ConnectState extends State<Connect> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.09),
+              padding: EdgeInsets.only(
+                  top: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.09),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: Color(0xFFFFC909),
@@ -61,11 +74,15 @@ class _ConnectState extends State<Connect> {
                     fixedSize: Size(300, 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20))),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
+                onPressed: () => {showModalBottomSheet(
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30.0),
+                        topRight: Radius.circular(30.0)),
+                      ),
+                      context: context, builder: (context) => Login(),
+                      )
                 },
                 child: Text(
                   "Login",

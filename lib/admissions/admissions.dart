@@ -20,21 +20,9 @@ class admissionsPage1 extends StatelessWidget {
             body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              backgroundColor: const Color(0xFF006699),
-              pinned: true,
-              title: const Text(
-                "PAMANTASAN NG LUNGSOD NG MAYNILA",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
-                    color: Colors.white),
-              ),
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
-                onPressed: () {Navigator.pop(context);},
-              ),
+                title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA', style: TextStyle(fontSize: 14)),
+                leading: BackButton(onPressed: () {Navigator.pop(context);}),
+                backgroundColor: Color(0xFF006699),
             ),
             SliverList(
               delegate: SliverChildListDelegate(

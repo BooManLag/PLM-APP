@@ -83,6 +83,8 @@ flutter:
     - assets/profile_pic.png
     - assets/transactions.png
     - assets/plm_pic.png
+    - assets/profilebg.png
+    - assets/profilepic.png
   fonts:
     - family: Lato
       fonts:

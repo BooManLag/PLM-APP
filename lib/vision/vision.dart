@@ -13,7 +13,7 @@ class Mission extends StatelessWidget {
       theme: ThemeData(fontFamily: "Lato"),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
+          title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA', style: TextStyle(fontSize: 14)),
           leading: BackButton(onPressed: () {Navigator.pop(context);}),
           backgroundColor: Color(0xFF006699),
         ),

@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         drawer: SideNav(),
         appBar: AppBar(
-          title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA', style: TextStyle(fontSize: 14)),
+          title: Text('PAMANTASAN NG LUNGSOD NG MAYNILA', style: TextStyle(fontSize: 14)),
           backgroundColor: Color(0xFF006699),
         ),
         body: Column(
