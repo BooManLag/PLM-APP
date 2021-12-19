@@ -45,6 +45,7 @@ class _GradesState extends State {
   Widget build(BuildContext context) {
     _isVisible = (_isVisible1 == true || _isVisible2 == true || _isVisible3 == true  || _isVisible4 == true  ) ? false : true;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Text('PAMANTASAN NG LUNGOSD NG MAYNILA',

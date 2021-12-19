@@ -13,6 +13,7 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: color,
         appBarTheme: AppBarTheme(color: const Color(0xFF006699)),
@@ -61,25 +62,25 @@ class Contacts extends StatelessWidget {
           ),
           Container(
               child: Row(
-            children: [
-              // ignore: deprecated_member_use
-              Expanded(
-                child: FlatButton(
-                  padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
-                  onPressed: () {},
-                  color: Color(0xFFFFC909),
-                  child: Text('Administratives'),
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
-                  onPressed: () {},
-                  child: Text('Colleges'),
-                ),
-              ),
-            ],
-          )),
+                children: [
+                  // ignore: deprecated_member_use
+                  Expanded(
+                    child: FlatButton(
+                      padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
+                      onPressed: () {},
+                      color: Color(0xFFFFC909),
+                      child: Text('Administratives'),
+                    ),
+                  ),
+                  Expanded(
+                    child: FlatButton(
+                      padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
+                      onPressed: () {},
+                      child: Text('Colleges'),
+                    ),
+                  ),
+                ],
+              )),
           Container(
             padding: EdgeInsets.fromLTRB(15, 10, 15, 15),
             child: DataTable(columns: [
@@ -197,90 +198,90 @@ class Contacts extends StatelessWidget {
           ),
           Container(
               child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                  width: 40.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/arrowleft.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no1_highlighted.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no2.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no3.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no4.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no5.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 50.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/no6.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-              SizedBox(
-                  width: 40.0,
-                  child: FlatButton(
-                    child: Image.asset(
-                      'assets/arrowright.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    onPressed: () {},
-                  )),
-            ],
-          )),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                      width: 40.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/arrowleft.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no1_highlighted.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no2.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no3.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no4.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no5.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 50.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/no6.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                  SizedBox(
+                      width: 40.0,
+                      child: FlatButton(
+                        child: Image.asset(
+                          'assets/arrowright.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                        onPressed: () {},
+                      )),
+                ],
+              )),
         ]),
       ),
     );
