@@ -35,19 +35,15 @@ class admissionsPage1 extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => HomePage()));
                     },
                   ),
-                ),
-
-                SliverList(
-                  delegate: SliverChildListDelegate(
-                    <Widget>[
-                      Container(
+                  bottom: PreferredSize(
+                      child: Container(
                         decoration: BoxDecoration(
                           color: Color(0xFFFFC909),
                         ),
                         height: 50,
                         child: Center(
                             child: Text(
-                              "PLM Admission Test (PLMAT)",
+                              "PLMAT / PLMAT RESULTS",
                               style: TextStyle(
                                   fontFamily: "Lato",
                                   fontWeight: FontWeight.bold,
@@ -55,6 +51,12 @@ class admissionsPage1 extends StatelessWidget {
                                   color: Colors.white),
                             )),
                       ),
+                      preferredSize: Size.fromHeight(50.0)),
+                ),
+
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    <Widget>[
                       Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -335,12 +337,8 @@ class admissionsPage2 extends StatelessWidget {
                 icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () => Navigator.of(context).pop(),
               ),
-            ),
-            SliverList(
-              delegate: SliverChildListDelegate(
-                <Widget>[
-
-                  Container(
+              bottom: PreferredSize(
+                  child: Container(
                     decoration: BoxDecoration(
                       color: Color(0xFFFFC909),
                     ),
@@ -355,6 +353,11 @@ class admissionsPage2 extends StatelessWidget {
                               color: Colors.white),
                         )),
                   ),
+                  preferredSize: Size.fromHeight(50.0)),
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                <Widget>[
                   Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -494,49 +497,6 @@ class admissionsPage2 extends StatelessWidget {
                       )
 
                   ),
-                  // Padding(
-                  //     padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 20.0),
-                  //     child: TextField(
-                  //       decoration: InputDecoration(
-                  //         border: InputBorder.none,
-                  //         hintText: "Select date",
-                  //         suffixIcon: Icon(Icons.calendar_today_outlined, color: Color(0xFF787878)),
-                  //         fillColor: Color(0xFFEFEFEF),
-                  //         filled: true,
-                  //       ),
-                  //     )
-                  // ),
-
-                  //Padding(
-                  //  padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 5.0),
-                  //  child: TextField(
-                  //    decoration: InputDecoration(
-                  //      border: OutlineInputBorder(
-                  //        borderSide: const BorderSide(color: Color(0xFFEFEFEF)),
-                  //        borderRadius: BorderRadius.circular(5.0),
-                  //      ),
-                  //      hintText: "Enter your full name",
-                  //      hintStyle: TextStyle(fontFamily:'Lato',fontSize: 12.0, color: Color(0xFFADADAD)),
-                  //      fillColor: Color(0xFFEFEFEF),
-                  //      filled: true,
-                  //    ),
-                  //  )
-                  //),
-                  // Padding(
-                  //     padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
-                  //     child: TextField(
-                  //       decoration: InputDecoration(
-                  //         border: OutlineInputBorder(
-                  //           borderRadius: BorderRadius.circular(5.0),
-                  //         ),
-                  //         hintText: "Enter your applicant number",
-                  //         hintStyle: TextStyle(fontFamily:'Lato',fontSize: 12.0, color: Color(0xFFADADAD)),
-                  //         fillColor: Color(0xFFEFEFEF),
-                  //         filled: true,
-                  //       ),
-                  //     )
-                  // ),
-
                   Padding(
                     padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 20.0),
 
@@ -626,20 +586,21 @@ class admissionsPage2 extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(0.0),
-                    constraints: BoxConstraints(
-                        minHeight: 10,
-                        minWidth: 5,
-                        maxHeight: 400,
-                        maxWidth: 300),
-
+                    padding: EdgeInsets.all(20.0),
                     child: Center(
                       child: Padding(
                         padding: const EdgeInsets.all(0.0),
                         child: DataTable(
-                          columnSpacing: 0.0,
+                          columnSpacing: 25.0,
+                          headingRowHeight: 40.0,
+                          dataRowHeight: 30.0,
                           headingRowColor: MaterialStateColor.resolveWith(
                                   (states) => Color(0xFF006699)),
+                          dataRowColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+                            if (states.contains(MaterialState.selected))
+                              return Colors.white;
+                            return Color(0xFFE9E9E9);  // Use the default value.
+                          }),
                           columns: [
                             DataColumn(label: Container(
                               width: 150,
@@ -664,22 +625,17 @@ class admissionsPage2 extends StatelessWidget {
                             DataRow(cells: [
                               DataCell(
                                 Container(
-                                    width: 150,
-                                    color: Color(0xFFE9E9E9),
                                     child: Text(
                                         'ABERIN, Charisse',
-                                        textAlign: TextAlign.center,
+                                        textAlign: TextAlign.left,
                                         style: TextStyle(
                                             fontFamily: "Lato",
                                             fontWeight: FontWeight.normal,
                                             color: Color(0xFF787878),
                                             fontSize: 12))
                                 ),),
-                              DataCell(Container(
-
-                                color: Color(0xFFE9E9E9),
-                                child: Text('BS Computer Science',
-                                    textAlign: TextAlign.left,
+                              DataCell(Center(
+                                child: Text('BS Computer Science',textAlign: TextAlign.left,
                                     style: TextStyle(
                                         fontFamily: "Lato",
                                         fontWeight: FontWeight.normal,
@@ -687,7 +643,7 @@ class admissionsPage2 extends StatelessWidget {
                                         fontSize: 12)),
                               )),
                             ]),
-                            DataRow(cells: [
+                            DataRow(selected: true,cells: [
                               DataCell(Text(
                                   'AGUILA, Jose', textAlign: TextAlign.left,
                                   style: TextStyle(
@@ -724,7 +680,7 @@ class admissionsPage2 extends StatelessWidget {
                                         fontSize: 12)),
                               ))
                             ]),
-                            DataRow(cells: [
+                            DataRow(selected: true,cells: [
                               DataCell(Text(
                                   'BACARISA, Andrea', textAlign: TextAlign.left,
                                   style: TextStyle(
@@ -760,7 +716,7 @@ class admissionsPage2 extends StatelessWidget {
                                         fontSize: 12)),
                               ))
                             ]),
-                            DataRow(cells: [
+                            DataRow(selected: true,cells: [
                               DataCell(Text(
                                   'CALEON, Baron', textAlign: TextAlign.left,
                                   style: TextStyle(
@@ -785,8 +741,6 @@ class admissionsPage2 extends StatelessWidget {
                       ),
                     ),
                   ),
-
-
                 ],
 
               ),
