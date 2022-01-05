@@ -9,7 +9,8 @@ class _ChangePasswordState extends State<ChangePassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
         leading: BackButton(
             color: Colors.black,
             onPressed: () {Navigator.pop(context);}),
@@ -92,36 +93,23 @@ class _ChangePasswordState extends State<ChangePassword> {
                   ),
                 ],
               ),
-
             ),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   ElevatedButton(
-                    style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFFC909)),
-                        minimumSize: MaterialStateProperty.all(Size(MediaQuery.of(context).size.width * 0.90, 40)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        )
+                      style: ElevatedButton.styleFrom(
+                      primary: Color(0xFFFFC909),
+                      minimumSize: Size(MediaQuery.of(context).size.width * 0.90, 40),
                     ),
                     onPressed: () {},
                     child: Text('Update Password'),
                   ),
                   ElevatedButton(
-                    style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFE9E9E9)),
-                        minimumSize: MaterialStateProperty.all(Size(MediaQuery.of(context).size.width * 0.90, 40)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        )
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFFE9E9E9),
+                      minimumSize: Size(MediaQuery.of(context).size.width * 0.90, 40),
                     ),
                     onPressed: () {},
                     child: Text('Cancel'),

@@ -1,11 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:plm_app_final/account_information/accountdata.dart';
 
-void main() {
-  runApp(const AccountInformation());
+class AccountInformation extends StatefulWidget {
+  @override
+  _AccountInformationState createState() => _AccountInformationState();
 }
 
-class AccountInformation extends StatelessWidget {
-  const AccountInformation({Key? key}) : super(key: key);
+class _AccountInformationState extends State<AccountInformation> {
+
+  late List<Data> personal;
+  late List<Data> school;
+  final columns = [' ', ' '];
+
+  List<DataColumn> getColumns(List<String> column) => column
+      .map((String column) => DataColumn(
+    label: Text(column),
+  ))
+      .toList();
+
+  List<DataCell> getCells(List<dynamic> cells) => cells
+      .map((data) => DataCell(Container(
+    width: MediaQuery.of(context).size.width * 0.4,
+    child: Text(
+      '$data',
+      style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold
+      ),
+    ),
+  )))
+      .toList();
+
+  List<DataRow> getRows(List<Data> student) => student.map((Data student) {
+    final cells = [student.label, student.details];
+    return DataRow(cells: getCells(cells));
+  }).toList();
+
+  @override
+  void initState() {
+    super.initState();
+    this.personal = List.of(personalData);
+    this.school = List.of(schoolData);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,289 +113,53 @@ class AccountInformation extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: [ Column(
-                children: [
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Last Name",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 105.5),
-                            child: Text("DELA CRUZ"),
-                          ),
-                        ],
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    DataTable(
+                      dividerThickness: 0.0,
+                      headingRowHeight: 0.0,
+                      dataRowHeight: 30.0,
+                      columnSpacing: 30.0,
+                      columns: getColumns(columns),
+                      rows: getRows(personal),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text("Your college shall be determined from the degree program indicated here. If the degree program is erroneous, please contact your respective college's OCS. If all details shown here are correct, you may proceed to the Pre-enlistment Page by clicking the link on the menu bar.",
+                          style: TextStyle(
+                            fontSize: 8.0,
+                            color: Colors.grey,)
                       ),
                     ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Middle Name",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 89),
-                            child: Text("MARTINEZ"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Pedigree",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 115),
-                            child: Text("None"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Gender",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 126),
-                            child: Text("Male"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Civil Status",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 100),
-                            child: Text("Status"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Country of Citizenship",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 32),
-                            child: Text("Philippines"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Personal Email",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 80),
-                            child: Text("jdelacruz2021@gmail.com"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Mobile Number",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 76),
-                            child: Text("09639392864"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-
-              Column(
-                children: [
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "First Name",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 105),
-                            child: Text("JUAN"),
-                          ),
-                        ],
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    DataTable(
+                      dividerThickness: 0.0,
+                      headingRowHeight: 0.0,
+                      dataRowHeight: 30.0,
+                      columnSpacing: 30.0,
+                      columns: getColumns(columns),
+                      rows: getRows(school),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text("Your college shall be determined from the degree program indicated here. If the degree program is erroneous, please contact your respective college's OCS. If all details shown here are correct, you may proceed to the Pre-enlistment Page by clicking the link on the menu bar.",
+                          style: TextStyle(
+                            fontSize: 8.0,
+                            color: Colors.grey,)
                       ),
                     ),
-                  ), Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Last Name",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 105.5),
-                            child: Text("DELA CRUZ"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Middle Name",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 89),
-                            child: Text("MARTINEZ"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Pedigree",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 115),
-                            child: Text("None"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Gender",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 126),
-                            child: Text("Male"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Civil Status",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 100),
-                            child: Text("Status"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Country of Citizenship",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 32),
-                            child: Text("Philippines"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Personal Email",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 80),
-                            child: Text("jdelacruz2021@gmail.com"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 25),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Mobile Number",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 76),
-                            child: Text("09639392864"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
